@@ -1,5 +1,8 @@
 body {
 
+
+
+
     .navbar {
         font-size: 20px;
 
@@ -13,7 +16,7 @@ body {
     }
 
     header {
-        height: 400px;
+        height: 350px;
         width: 100%;
         background-image: url(./fotosIconosFondos/fondo.jpg);
         background-size: cover;
@@ -22,8 +25,53 @@ body {
         justify-content: center;
         align-items: center;
 
-        h1 {
-            font-size: 50px;
+        .container {
+            margin: 0 auto;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+
+            .text {
+                color: transparent;
+                font-size: 100px;
+                display: inline-block;
+                border-radius: 3px;
+                background-color: rgb(58, 58, 58);
+                position: relative;
+                -webkit-background-clip: text;
+                background-clip: text;
+
+                &:before {
+                    content: attr(data-title);
+                    background: linear-gradient(90deg, rgba(245, 137, 21, 1) 0%, rgba(253, 29, 29, 1) 51%, rgba(29, 53, 87, 1) 100%);
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    transition: all 1s ease-in-out;
+                    animation: text-animation 3s infinite;
+                }
+            }
+        }
+
+        @keyframes text-animation {
+            0% {
+                width: 0;
+            }
+
+            50% {
+                width: 100%;
+            }
+
+            100% {
+                width: 0;
+            }
         }
     }
 
@@ -111,7 +159,7 @@ body {
         vertical-align: top;
     }
 
-   
+
 
     .footer-distributed .footer-left {
         width: 40%;
@@ -129,7 +177,7 @@ body {
         color: lightseagreen;
     }
 
-   
+
 
     .footer-distributed .footer-links {
         color: #ffffff;
@@ -152,7 +200,7 @@ body {
         margin: 0;
     }
 
-    
+
 
     .footer-distributed .footer-center {
         width: 35%;
@@ -211,7 +259,7 @@ body {
         content: none;
     }
 
-  
+
 
     .footer-distributed .footer-right {
         width: 20%;
@@ -254,13 +302,35 @@ body {
         margin-bottom: 5px;
     }
 
-    
+
 
     @media (max-width: 880px) {
+        header {
+            height: 280px;
+
+            .container {
+                .text {
+                    font-size: 60px;
+                }
+            }
+        }
+
+        main {
+            .carousel.pointer-event {
+                text-align-last: center;
+
+                .carousel-inner img {
+                    width: 450px;
+                    height: 400px;
+                }
+            }
+        }
 
         .footer-distributed {
             font: bold 14px sans-serif;
         }
+
+
 
         .footer-distributed .footer-left,
         .footer-distributed .footer-center,
@@ -277,13 +347,32 @@ body {
 
     }
 
+    @media (max-width: 600px) {
+        main {
+            .carousel.pointer-event {
+                text-align-last: center;
+
+                .carousel-inner img {
+                    width: 280px;
+                    height: 380px;
+                }
+            }
+        }
+
+
+    }
+
 }
+
+//-----------Estilos Contacto----------------¡¡¡
 
 .mainContactos {
     background-color: #444442;
     height: 800px;
+
     .container {
         padding-top: 50px;
+
         h2 {
             font-family: 'Poppins', sans-serif, 'arial';
             font-weight: 600;
@@ -322,11 +411,11 @@ body {
         }
 
         @media only screen and (max-width: 768px) {
-            
+
             .styled-input {
                 width: 100%;
             }
-            
+
         }
 
         .styled-input label {
@@ -380,7 +469,7 @@ body {
         }
 
         .submit-btn {
-            
+
             padding: 7px 35px;
             border-radius: 60px;
             display: inline-block;
@@ -420,6 +509,26 @@ body {
 
 
     }
+}
+
+//-------------Estilos Productos----------¡¡¡
+.mainProductos {
+    background-color: #444442;
+
+    .container {
+        h3 {
+            color: white;
+            text-shadow: 5px, 5px, 5px brown;
+        }
+
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+
+    }
+
+
+
 
 
 }

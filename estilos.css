@@ -1,6 +1,3 @@
-body {
-  /* The company logo */
-}
 
 body .navbar {
   font-size: 20px;
@@ -17,7 +14,7 @@ body .navbar .nav-item {
 }
 
 body header {
-  height: 400px;
+  height: 350px;
   width: 100%;
   background-image: url(./fotosIconosFondos/fondo.jpg);
   background-size: cover;
@@ -33,8 +30,72 @@ body header {
           align-items: center;
 }
 
-body header h1 {
-  font-size: 50px;
+body header .container {
+  margin: 0 auto;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+}
+
+body header .container .text {
+  color: transparent;
+  font-size: 100px;
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #3a3a3a;
+  position: relative;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body header .container .text:before {
+  content: attr(data-title);
+  background: -webkit-gradient(linear, left top, right top, from(#f58915), color-stop(51%, #fd1d1d), to(#1d3557));
+  background: linear-gradient(90deg, #f58915 0%, #fd1d1d 51%, #1d3557 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-animation: text-animation 3s infinite;
+          animation: text-animation 3s infinite;
+}
+
+@-webkit-keyframes text-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 body main .jumbotron.jumbotron-fluid .container h1 {
@@ -250,6 +311,19 @@ body .footer-distributed .footer-icons a {
 }
 
 @media (max-width: 880px) {
+  body header {
+    height: 280px;
+  }
+  body header .container .text {
+    font-size: 60px;
+  }
+  body main .carousel.pointer-event {
+    text-align-last: center;
+  }
+  body main .carousel.pointer-event .carousel-inner img {
+    width: 450px;
+    height: 400px;
+  }
   body .footer-distributed {
     font: bold 14px sans-serif;
   }
@@ -263,6 +337,16 @@ body .footer-distributed .footer-icons a {
   }
   body .footer-distributed .footer-center i {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  body main .carousel.pointer-event {
+    text-align-last: center;
+  }
+  body main .carousel.pointer-event .carousel-inner img {
+    width: 280px;
+    height: 380px;
   }
 }
 
@@ -404,5 +488,20 @@ body .footer-distributed .footer-icons a {
 .mainContactos .container input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
+}
+
+.mainProductos {
+  background-color: #444442;
+}
+
+.mainProductos .container {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.mainProductos .container h3 {
+  color: white;
+  text-shadow: 5px, 5px, 5px brown;
 }
 /*# sourceMappingURL=estilos.css.map */

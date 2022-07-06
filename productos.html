@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <a class="navbar-brand" href="" img src="./fotosIconosFondos/icono.png" alt="icono" class="icono"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -31,7 +32,7 @@
                     <a class="nav-link" href="productos.html">Productos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galeria</a>
+                    <a class="nav-link" href="index.html#a">Galeria</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contactos.html">Contactos</a>
@@ -40,11 +41,21 @@
         </div>
     </nav>
     <header>
-        <h1>WOODEN</h1>
+        <div class="container">
+            <span data-title="WOODEN" class="text">
+                WOODEN
+            </span>
+        </div>
     </header>
 
-    <main>
-        <section class="seccionProductos"> </section>
+    <main class="mainProductos">
+        <div class="container"><h3>PRODUCTOS</h3>
+            <div id="contenedor-productos" class="row">
+            </div>
+        </div> 
+
+        
+        
     </main>
 
     <footer class="footer-distributed">
@@ -59,7 +70,7 @@
                 
                 <a href="productos.html">Productos</a>
             
-                <a href="#">Galeria</a>
+                <a href="index.html#demo">Galeria</a>
             
                 <a href="contactos.html">Contactos</a>
                 
@@ -105,7 +116,7 @@
         </div>
 
     </footer>
-
+    <script src="index.js"></script>
 </body>
 
 </html>
