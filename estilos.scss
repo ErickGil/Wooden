@@ -527,8 +527,99 @@ body {
 
     }
 
+    .btn-danger {
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        margin-top: 50px;
+        border: 0;
+        height: 0;
+        border-top: 4px double black;
+        text-align: center;
+    }
 
 
+    .letrasTotal {
+        background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 30px;
+        font-family: "Source Sans Pro", sans-serif;
+        animation: reveal 3000ms ease-in-out forwards 200ms,
+            glow 2500ms linear infinite 2000ms;
 
+        @keyframes reveal {
+            80% {
+                letter-spacing: 8px;
+            }
+
+            100% {
+                background-size: 300% 300%;
+            }
+        }
+
+        @keyframes glow {
+            40% {
+                text-shadow: 0 0 8px #fff;
+            }
+        }
+    }
+
+    .texto {
+        background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: 50px;
+        font-family: "Source Sans Pro", sans-serif;
+        animation: reveal 3000ms ease-in-out forwards 200ms,
+            glow 2500ms linear infinite 2000ms;
+
+        @keyframes reveal {
+            80% {
+                letter-spacing: 8px;
+            }
+
+            100% {
+                background-size: 300% 300%;
+            }
+        }
+
+        @keyframes glow {
+            40% {
+                text-shadow: 0 0 8px #fff;
+            }
+        }
+    }
+
+    .tarjeta-carrito {
+        color: #fff;
+        display: flex;
+        height: auto;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-right: 20px;
+
+        .imagen {
+            img {
+                margin-left: 20px;
+                height: 60px;
+                width: 60px;
+                object-fit: cover;
+            }
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+        }
+
+
+    }
 
 }
