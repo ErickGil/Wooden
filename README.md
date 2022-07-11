@@ -1,2 +1,2 @@
 # Wooden
-Es una pagina creada desde cero para el proyecto de javascript para este desafio le agrege en la parte productos los elemento mediante el dom 
+se agrego para la parte de eventos un carrito de compras en la seccion productos 
