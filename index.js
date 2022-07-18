@@ -85,7 +85,7 @@ for (const elemnt of stock) {
                 <p class="card-text">Calidad: <b>${elemnt.calidad}</b></p>
                 <p class="card-text">Precio: <b>$${elemnt.precio}</b></p>
                 <p class="card-text">Cantidad: <b>${elemnt.cantidad}</b></p>
-                <a href="#" class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
+                <a class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
             </div>
         </div>
     `
