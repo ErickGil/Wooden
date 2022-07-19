@@ -1,11 +1,31 @@
+
+
+body .logoCarro {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 body .navbar {
   font-size: 20px;
 }
 
 body .navbar .collapse.navbar-collapse {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .navbar .nav-item {
@@ -22,11 +42,11 @@ body header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body header .container {
@@ -36,11 +56,11 @@ body header .container {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: transparent;
 }
 
@@ -70,18 +90,16 @@ body header .container .text:before {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   -webkit-animation: text-animation 3s infinite;
-  animation: text-animation 3s infinite;
+          animation: text-animation 3s infinite;
 }
 
 @-webkit-keyframes text-animation {
   0% {
     width: 0;
   }
-
   50% {
     width: 100%;
   }
-
   100% {
     width: 0;
   }
@@ -91,11 +109,9 @@ body header .container .text:before {
   0% {
     width: 0;
   }
-
   50% {
     width: 100%;
   }
-
   100% {
     width: 0;
   }
@@ -127,7 +143,7 @@ body main .mesaEj {
   width: 100%;
   height: 700px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 
 body main .mesaEjDos {
@@ -135,7 +151,7 @@ body main .mesaEjDos {
   width: 100%;
   height: 700px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 
 body main .puertaEj {
@@ -143,7 +159,7 @@ body main .puertaEj {
   width: 100%;
   height: 700px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 
 body main .ventanaEj {
@@ -151,7 +167,7 @@ body main .ventanaEj {
   width: 100%;
   height: 700px;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
 }
 
 body main .seccionProductos {
@@ -162,9 +178,9 @@ body main .seccionProductos {
 body .footer-distributed {
   background: #666;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
@@ -317,24 +333,19 @@ body .footer-distributed .footer-icons a {
   body header {
     height: 280px;
   }
-
   body header .container .text {
     font-size: 60px;
   }
-
   body main .carousel.pointer-event {
     text-align-last: center;
   }
-
   body main .carousel.pointer-event .carousel-inner img {
     width: 450px;
     height: 400px;
   }
-
   body .footer-distributed {
     font: bold 14px sans-serif;
   }
-
   body .footer-distributed .footer-left,
   body .footer-distributed .footer-center,
   body .footer-distributed .footer-right {
@@ -343,7 +354,6 @@ body .footer-distributed .footer-icons a {
     margin-bottom: 40px;
     text-align: center;
   }
-
   body .footer-distributed .footer-center i {
     margin-left: 0;
   }
@@ -353,7 +363,6 @@ body .footer-distributed .footer-icons a {
   body main .carousel.pointer-event {
     text-align-last: center;
   }
-
   body main .carousel.pointer-event .carousel-inner img {
     width: 280px;
     height: 380px;
@@ -386,10 +395,10 @@ body .footer-distributed .footer-icons a {
   line-height: 1.5;
 }
 
-.mainContactos .container input:focus~label,
-.mainContactos .container textarea:focus~label,
-.mainContactos .container input:valid~label,
-.mainContactos .container textarea:valid~label {
+.mainContactos .container input:focus ~ label,
+.mainContactos .container textarea:focus ~ label,
+.mainContactos .container input:valid ~ label,
+.mainContactos .container textarea:valid ~ label {
   font-size: 0.75em;
   color: #c5c3c3;
   top: -5px;
@@ -443,8 +452,8 @@ body .footer-distributed .footer-icons a {
   outline: 0;
 }
 
-.mainContactos .container input:focus~span,
-.mainContactos .container textarea:focus~span {
+.mainContactos .container input:focus ~ span,
+.mainContactos .container textarea:focus ~ span {
   width: 100%;
   -webkit-transition: all 0.075s ease;
   transition: all 0.075s ease;
@@ -470,16 +479,16 @@ body .footer-distributed .footer-icons a {
   font-size: 18px;
   cursor: pointer;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
 .mainContactos .container .submit-btn:hover {
   -webkit-transform: translateY(1px);
-  transform: translateY(1px);
+          transform: translateY(1px);
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
+          box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.09);
 }
 
 @media (max-width: 768px) {
@@ -490,12 +499,12 @@ body .footer-distributed .footer-icons a {
   }
 }
 
-.mainContactos .container input[type=checkbox]+label {
+.mainContactos .container input[type=checkbox] + label {
   color: #ccc;
   font-style: italic;
 }
 
-.mainContactos .container input[type=checkbox]:checked+label {
+.mainContactos .container input[type=checkbox]:checked + label {
   color: #f00;
   font-style: normal;
 }
@@ -520,32 +529,24 @@ body .footer-distributed .footer-icons a {
   margin-bottom: 20px;
 }
 
-.mainProductos hr {
-  margin-top: 50px;
-  border: 0;
-  height: 0;
-  border-top: 4px double black;
-  text-align: center;
-}
-
-.mainProductos .letrasTotal {
+.mainProductos .texto {
   background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 30px;
+  font-size: 50px;
+  padding-left: 30px;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
-  animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
+ glow 2500ms linear infinite 2000ms;
+          animation: reveal 3000ms ease-in-out forwards 200ms,
+ glow 2500ms linear infinite 2000ms;
 }
 
 @-webkit-keyframes reveal {
   80% {
     letter-spacing: 8px;
   }
-
   100% {
     background-size: 300% 300%;
   }
@@ -555,7 +556,6 @@ body .footer-distributed .footer-icons a {
   80% {
     letter-spacing: 8px;
   }
-
   100% {
     background-size: 300% 300%;
   }
@@ -573,24 +573,31 @@ body .footer-distributed .footer-icons a {
   }
 }
 
-.mainProductos .texto {
+.mainProductos hr {
+  margin-top: 50px;
+  border: 0;
+  height: 0;
+  border-top: 4px double black;
+  text-align: center;
+}
+
+.mainProductos .letrasTotal {
   background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 50px;
+  font-size: 30px;
   font-family: "Source Sans Pro", sans-serif;
   -webkit-animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
-  animation: reveal 3000ms ease-in-out forwards 200ms,
-    glow 2500ms linear infinite 2000ms;
+ glow 2500ms linear infinite 2000ms;
+          animation: reveal 3000ms ease-in-out forwards 200ms,
+ glow 2500ms linear infinite 2000ms;
 }
 
 @keyframes reveal {
   80% {
     letter-spacing: 8px;
   }
-
   100% {
     background-size: 300% 300%;
   }
@@ -602,6 +609,14 @@ body .footer-distributed .footer-icons a {
   }
 }
 
+.mainProductos .imagenCarro {
+  margin-left: 20px;
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .mainProductos .tarjeta-carrito {
   color: #fff;
   display: -webkit-box;
@@ -609,12 +624,12 @@ body .footer-distributed .footer-icons a {
   display: flex;
   height: auto;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 15px;
   margin-bottom: 15px;
   margin-right: 20px;
@@ -625,7 +640,7 @@ body .footer-distributed .footer-icons a {
   height: 60px;
   width: 60px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .mainProductos .tarjeta-carrito div {
@@ -633,8 +648,7 @@ body .footer-distributed .footer-icons a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-
 /*# sourceMappingURL=estilos.css.map */

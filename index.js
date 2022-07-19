@@ -35,6 +35,13 @@ function limpiarCarro() {
     let divCarro = document.querySelector("#carro")
     divCarro.innerHTML = "";
 }
+function vaciarCarro(){
+    let divCarro = document.querySelector("#carro")
+    divCarro.innerHTML = ""
+    localStorage.removeItem("carro");
+    localStorage.clear();
+    
+}
 
 function tarjetaCarro(producto) {
     let carroTarjeta = `
@@ -52,13 +59,32 @@ function tarjetaCarro(producto) {
     return carroTarjeta
 }
 
-function actualizarCarro() {
+
+function actualizarCarro(carro) {
     let divCarro = document.querySelector("#carro")
     carro.productos.forEach(productos => {
         divCarro.innerHTML += tarjetaCarro(productos)
     })
     divCarro.innerHTML += `<h1 class="letrasTotal">Total: $ ${carro.calcularTotal()}</h1>`
+    
 }
+// cargar carro existente utilizacion de json y storage//
+
+
+function renovarStorage() {
+    localStorage.removeItem("carro"); 
+    localStorage.setItem("carro", JSON.stringify(carro));
+    
+}
+window.addEventListener('DOMContentLoaded', (e) => {
+    let storage = JSON.parse(localStorage.getItem("carro"));
+    let carritoGuardado = new Carrito(storage.id, storage.productos);
+    storage.productos.forEach(producto=> {
+        carritoGuardado.productos.push(producto);
+    })
+    limpiarCarro();
+    actualizarCarro(carritoGuardado);
+});
 
 Agregarproductos(1, "Escritorio", "De Diseño", 24000, 2, "escritorio.jpg")
 Agregarproductos(2, "Mesa Comerdor", "Generico", 12000, 5, "mesa.jpg")
@@ -85,14 +111,14 @@ for (const elemnt of stock) {
                 <p class="card-text">Calidad: <b>${elemnt.calidad}</b></p>
                 <p class="card-text">Precio: <b>$${elemnt.precio}</b></p>
                 <p class="card-text">Cantidad: <b>${elemnt.cantidad}</b></p>
-                <a href="#" class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
+                <a class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
             </div>
         </div>
     `
     contenedorProductos.append(columna)
 }
 
-let carro = new Carrito(1, );
+let carro = new Carrito(1);
 
 let botones = document.querySelectorAll(".botonDeCompra");
 let arrayDeBotones = Array.from(botones)
@@ -100,13 +126,15 @@ arrayDeBotones.forEach(boton => {
     boton.addEventListener("click", (e) => {
         let productoSeleccionado = stock.find(producto => producto.id == e.target.id)
         carro.productos.push(productoSeleccionado);
-        console.log(carro)
         limpiarCarro();
-        actualizarCarro();
+        actualizarCarro(carro);
+        renovarStorage();
+        
     })
 })
 
 let botonLimpiar = document.querySelector(".botonLimpiar")
-botonLimpiar.addEventListener("click", (e) => {
-    limpiarCarro();
+botonLimpiar.addEventListener("click", () => {
+    vaciarCarro();
+    
 })
