@@ -129,7 +129,7 @@ arrayDeBotones.forEach(boton => {
         limpiarCarro();
         actualizarCarro(carro);
         renovarStorage();
-        
+       
     })
 })
 
