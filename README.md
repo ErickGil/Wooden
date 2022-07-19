@@ -1,2 +1,2 @@
 # Wooden
-se agrego para la parte de eventos un carrito de compras en la seccion productos 
+se agregp logo carrito, y se agrego json
