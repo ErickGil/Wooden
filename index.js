@@ -27,8 +27,8 @@ class Carrito {
 }
 
 function Agregarproductos(id, nombre, calidad, precio, cantidad, imagen) {
-    let Productonuevo = new Producto(id, nombre, calidad, precio, cantidad, imagen)
-    stock.push(Productonuevo)
+    let productoNuevo = new Producto(id, nombre, calidad, precio, cantidad, imagen)
+    stock.push(productoNuevo)
 }
 
 function limpiarCarro() {
@@ -40,6 +40,7 @@ function vaciarCarro(){
     divCarro.innerHTML = ""
     localStorage.removeItem("carro");
     localStorage.clear();
+    carro = new Carrito(1)
     
 }
 
@@ -129,7 +130,6 @@ arrayDeBotones.forEach(boton => {
         limpiarCarro();
         actualizarCarro(carro);
         renovarStorage();
-       
     })
 })
 
@@ -138,3 +138,8 @@ botonLimpiar.addEventListener("click", () => {
     vaciarCarro();
     
 })
+
+
+
+
+

@@ -523,7 +523,9 @@ body {
 //-------------Estilos Productos----------¡¡¡
 .mainProductos {
     background-color: #444442;
-
+    .card{
+        margin: 2.5px;
+    }
     .container {
         h3 {
             color: white;

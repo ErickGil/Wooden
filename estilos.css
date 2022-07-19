@@ -513,6 +513,10 @@ body .footer-distributed .footer-icons a {
   background-color: #444442;
 }
 
+.mainProductos .card {
+  margin: 2.5px;
+}
+
 .mainProductos .container {
   text-align: center;
   padding-top: 20px;
