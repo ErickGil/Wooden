@@ -35,23 +35,27 @@ function limpiarCarro() {
     let divCarro = document.querySelector("#carro")
     divCarro.innerHTML = "";
 }
-function vaciarCarro(){
+
+function vaciarCarro() {
     let divCarro = document.querySelector("#carro")
     divCarro.innerHTML = ""
     localStorage.removeItem("carro");
     localStorage.clear();
     carro = new Carrito(1)
-    
+
 }
 
 function tarjetaCarro(producto) {
     let carroTarjeta = `
-    <hr><div class="tarjeta-carrito">
+    <div class="tarjeta-carrito">
     <div class="imagen">
         <img src="./fotosMuebles/${producto.imagen}" alt="">
     </div>
     <div >
         <h5>${producto.nombre}</h5>
+    </div>
+    <div>
+        <h5> ${producto.calidad}</h5>
     </div>
     <div>
         <h5>$ ${producto.precio}</h5>
@@ -66,21 +70,26 @@ function actualizarCarro(carro) {
     carro.productos.forEach(productos => {
         divCarro.innerHTML += tarjetaCarro(productos)
     })
-    divCarro.innerHTML += `<h1 class="letrasTotal">Total: $ ${carro.calcularTotal()}</h1>`
-    
+    divCarro.innerHTML += `<p class="text-right">Total: $<span id="total"></span>${carro.calcularTotal()}</p>`
+
 }
 // cargar carro existente utilizacion de json y storage//
 
-
+function toast(){
+    Toastify({
+        text: "Se Agrego al Carrito!",
+        duration: 1500
+    }).showToast();
+}
 function renovarStorage() {
-    localStorage.removeItem("carro"); 
+    localStorage.removeItem("carro");
     localStorage.setItem("carro", JSON.stringify(carro));
-    
+
 }
 window.addEventListener('DOMContentLoaded', (e) => {
     let storage = JSON.parse(localStorage.getItem("carro"));
     let carritoGuardado = new Carrito(storage.id, storage.productos);
-    storage.productos.forEach(producto=> {
+    storage.productos.forEach(producto => {
         carritoGuardado.productos.push(producto);
     })
     limpiarCarro();
@@ -123,23 +132,40 @@ let carro = new Carrito(1);
 
 let botones = document.querySelectorAll(".botonDeCompra");
 let arrayDeBotones = Array.from(botones)
+
+
 arrayDeBotones.forEach(boton => {
     boton.addEventListener("click", (e) => {
         let productoSeleccionado = stock.find(producto => producto.id == e.target.id)
         carro.productos.push(productoSeleccionado);
+        
         limpiarCarro();
         actualizarCarro(carro);
         renovarStorage();
+        toast();
     })
 })
 
 let botonLimpiar = document.querySelector(".botonLimpiar")
 botonLimpiar.addEventListener("click", () => {
-    vaciarCarro();
-    
+    Swal.fire({
+        title: 'Estas seguro?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Sí, bórralo!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                '¡Eliminado!',
+                'Su carro esta Vacio.',
+                'success'
+            )
+            vaciarCarro();
+        }
+    })
+
+
 })
-
-
-
-
-

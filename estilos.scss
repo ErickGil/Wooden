@@ -1,15 +1,15 @@
 body {
 
 
-    .logoCarro{
-    position: fixed;
-    bottom: 20px;
-    right: 40px;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
+    .logoCarro {
+        position: fixed;
+        bottom: 20px;
+        right: 40px;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
     }
 
     .navbar {
@@ -523,13 +523,25 @@ body {
 //-------------Estilos Productos----------¡¡¡
 .mainProductos {
     background-color: #444442;
-    .card{
+
+    .card {
         margin: 2.5px;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+        border-radius:5px;
+        background-color: #bbbbbb;
     }
+
+    .boton {
+        display: flex;
+        justify-content: center;
+    }
+
     .container {
         h3 {
+            font-size: 2rem;
             color: white;
-            text-shadow: 5px, 5px, 5px brown;
+            font-weight: 600;
+            
         }
 
         text-align: center;
@@ -548,7 +560,8 @@ body {
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
-        font-size: 50px;
+        font-size: 40px;
+        text-align: center;
         padding-left: 30px;
         font-family: "Source Sans Pro", sans-serif;
         animation: reveal 3000ms ease-in-out forwards 200ms,
@@ -570,7 +583,7 @@ body {
             }
         }
     }
-    
+
 
     hr {
         margin-top: 50px;
@@ -607,38 +620,57 @@ body {
             }
         }
     }
-    .imagenCarro{
+
+    .imagenCarro {
         margin-left: 20px;
         height: 60px;
         width: 60px;
         object-fit: cover;
     }
 
-    .tarjeta-carrito {
-        color: #fff;
-        display: flex;
-        height: auto;
-        justify-content: space-between;
-        flex-direction: row;
-        margin-top: 15px;
-        margin-bottom: 15px;
+    .text-right {
+        font-size: 25px;
+        color: #ffffff;
+        text-decoration: underline;
         margin-right: 20px;
-
-        .imagen {
-            img {
-                margin-left: 20px;
-                height: 60px;
-                width: 60px;
-                object-fit: cover;
-            }
-        }
-
-        div {
-            display: flex;
-            align-items: center;
-        }
-
-
     }
+
+    .seccionCarro {
+
+        .tarjeta-carrito {
+            background-color: #bbbbbb;
+            display: flex;
+            height: 68px;
+            width: 80%;
+            justify-content: space-between;
+            flex-direction: row;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+            border-radius:5px;
+
+
+
+            .imagen {
+                img {
+                    margin-left: 20px;
+                    height: 60px;
+                    width: 60px;
+                    object-fit: cover;
+                }
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+            }
+
+
+        }
+    }
+
 
 }
