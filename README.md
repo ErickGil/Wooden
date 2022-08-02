@@ -1,4 +1,4 @@
 # Wooden
-se agregp logo de carrito
-se agrego json y local storage
-tambien para el desafio complementario se agrego la simplificacion del operado += en la funcion  actualizarCarro 
+se agrego librerias 
+sweet alert para la eliminacion del carro
+y toastify para cuando se agreaga un item
