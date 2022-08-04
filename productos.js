@@ -59,7 +59,7 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
                 carro.productos.push(productosLS);
             });
             limpiarCarro();
-            actualizarCarro(carritoGuardado);K}
+            actualizarCarro(carritoGuardado);}
         
 
         function actualizarCarro(carrito) {
