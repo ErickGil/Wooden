@@ -33,7 +33,7 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
         //Crea tarjetas del carro
         function tarjetaCarro(producto) {
             let carroTarjeta = `
-        <div class="tarjeta-carrito">
+        <div class="container tarjeta-carrito">
         <div class="imagen">
             <img src="./fotosMuebles/${producto.imagen}" alt="">
         </div>
