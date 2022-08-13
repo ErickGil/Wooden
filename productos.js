@@ -95,7 +95,7 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
                     <h4 class="card-title"<b>${elemnt.nombre}</b></h4>
                     <p class="card-text">Calidad: <b>${elemnt.calidad}</b></p>
                     <p class="card-text">Precio: <b>$${elemnt.precio}</b></p>
-                    <p class="card-text">Cantidad: <b>${elemnt.cantidad}</b></p>
+                    <p id="seccionCantidad${elemnt.id}" class="card-text" >Cantidad: <b>${elemnt.cantidad }</b></p>
                     <a class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
                 </div>
             </div>
@@ -110,13 +110,29 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
             boton.addEventListener("click", (e) => {
                 let productoSeleccionado = stock.find(
                     (producto) => producto.id == e.target.id
+                    
                 );
                 carro.productos.push(productoSeleccionado);
+                console.log(productoSeleccionado)
 
-                limpiarCarro();
-                actualizarCarro(carro);
-                renovarStorage();
-                toast();
+                if(productoSeleccionado.cantidad > 0){
+                    limpiarCarro();
+                    actualizarCarro(carro);
+                    renovarStorage();
+                    toast();
+                    productoSeleccionado.cantidad = productoSeleccionado.cantidad - 1
+                    const demoId = document.querySelector('#seccionCantidad'+ productoSeleccionado.id);
+                    demoId.innerHTML = `<p class="card-text" >Cantidad: <b>${productoSeleccionado.cantidad }</b></p>`;
+                    
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Sin Stock!',
+                        })
+                    }
+                    
+                
             });
         });
 
