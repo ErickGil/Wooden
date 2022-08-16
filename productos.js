@@ -52,15 +52,23 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
 
         //Productos Local Storage
         let storage = JSON.parse(localStorage.getItem("carro"));
-        if(storage){let carritoGuardado = new Carrito(storage.id, storage.productos);
+        if (storage) {
+            let carritoGuardado = new Carrito(storage.id, storage.productos);
+            storage.productos.forEach((item) => {
+                stock.forEach((stockItem) => {
+                    if (stockItem.id == item.id) {
+                        stockItem.cantidad -= 1;
+                    }
+                });
+            });
             storage.productos.forEach((producto) => {
                 carritoGuardado.productos.push(producto);
                 let productosLS = stock.find((prodLS) => prodLS.id == producto.id);
                 carro.productos.push(productosLS);
             });
             limpiarCarro();
-            actualizarCarro(carritoGuardado);}
-        
+            actualizarCarro(carritoGuardado);
+        }
 
         function actualizarCarro(carrito) {
             let divCarro = document.querySelector("#carro");
@@ -95,7 +103,7 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
                     <h4 class="card-title"<b>${elemnt.nombre}</b></h4>
                     <p class="card-text">Calidad: <b>${elemnt.calidad}</b></p>
                     <p class="card-text">Precio: <b>$${elemnt.precio}</b></p>
-                    <p id="seccionCantidad${elemnt.id}" class="card-text" >Cantidad: <b>${elemnt.cantidad }</b></p>
+                    <p id="seccionCantidad${elemnt.id}" class="card-text" >Cantidad: <b>${elemnt.cantidad}</b></p>
                     <a class="btn btn-primary botonDeCompra" id= ${elemnt.id} >Agregar al carrito</a>
                 </div>
             </div>
@@ -110,29 +118,27 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
             boton.addEventListener("click", (e) => {
                 let productoSeleccionado = stock.find(
                     (producto) => producto.id == e.target.id
-                    
                 );
                 carro.productos.push(productoSeleccionado);
-                console.log(productoSeleccionado)
+                console.log(productoSeleccionado);
 
-                if(productoSeleccionado.cantidad > 0){
+                if (productoSeleccionado.cantidad > 0) {
                     limpiarCarro();
                     actualizarCarro(carro);
                     renovarStorage();
                     toast();
-                    productoSeleccionado.cantidad = productoSeleccionado.cantidad - 1
-                    const demoId = document.querySelector('#seccionCantidad'+ productoSeleccionado.id);
-                    demoId.innerHTML = `<p class="card-text" >Cantidad: <b>${productoSeleccionado.cantidad }</b></p>`;
-                    
-                }else{
+                    productoSeleccionado.cantidad = productoSeleccionado.cantidad - 1;
+                    const demoId = document.querySelector(
+                        "#seccionCantidad" + productoSeleccionado.id
+                    );
+                    demoId.innerHTML = `<p class="card-text" >Cantidad: <b>${productoSeleccionado.cantidad}</b></p>`;
+                } else {
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Sin Stock!',
-                        })
-                    }
-                    
-                
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Sin Stock!",
+                    });
+                }
             });
         });
 
@@ -151,6 +157,7 @@ fetch("https://62e8682593938a545be58877.mockapi.io/articulos")
                 if (result.isConfirmed) {
                     Swal.fire("¡Eliminado!", "Su carro esta Vacio.", "success");
                     vaciarCarro();
+                    location.reload();
                 }
             });
         });
